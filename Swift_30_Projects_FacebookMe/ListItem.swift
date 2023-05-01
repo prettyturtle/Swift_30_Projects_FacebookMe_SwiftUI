@@ -8,7 +8,6 @@
 import Foundation
 
 struct ListItem: Hashable {
-    var id: String = UUID().uuidString
     var imageName: String?
     var title: String
     
@@ -24,12 +23,23 @@ struct ListItem: Hashable {
         ListItem(imageName: "fb_education", title: "CMU"),
         ListItem(imageName: "fb_house", title: "Town Hall"),
         ListItem(imageName: "fb_games", title: "Instant Games"),
-        ListItem(imageName: nil, title: "See More...")
+        ListItem(title: "See More...")
     ]
     
     static let mocks2: [Self] = [
         ListItem(imageName: "fb_gear", title: "Settings"),
         ListItem(imageName: "fb_lock", title: "Privacy Shortcuts"),
         ListItem(imageName: "fb_question", title: "Help and Support")
+    ]
+}
+
+struct ListSection: Hashable {
+    var listItems: [ListItem]
+    var header: String?
+    
+    static let mock: [Self] = [
+        ListSection(listItems: ListItem.mocks1),
+        ListSection(listItems: [ListItem(title: "Add Favorites...")], header: "FAVORITES"),
+        ListSection(listItems: ListItem.mocks2),
     ]
 }

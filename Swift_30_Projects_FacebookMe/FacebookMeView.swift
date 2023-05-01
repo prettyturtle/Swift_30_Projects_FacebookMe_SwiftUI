@@ -13,8 +13,7 @@ struct FacebookMeView: View {
         navigationBarColors(background: .mainColor)
     }
     
-    var list1: [ListItem] = ListItem.mocks1
-    var list2: [ListItem] = ListItem.mocks2
+    var lists: [ListSection] = ListSection.mock
     
     var body: some View {
         
@@ -61,111 +60,59 @@ struct FacebookMeView: View {
                         
                     } // Section
                     
-                    
-                    Section {
+                    ForEach(lists, id: \.self) { list in
                         
-                        ForEach(list1, id: \.self) { item in
+                        Section {
                             
-                            HStack(spacing: 16) {
+                            ForEach(list.listItems, id: \.self) { item in
                                 
-                                Image(item.imageName ?? "fb_placeholder")
-                                    .resizable()
-                                    .frame(width: 30, height: 30)
+                                HStack(spacing: 16) {
+                                    
+                                    Image(item.imageName ?? "fb_placeholder")
+                                        .resizable()
+                                        .frame(width: 30, height: 30)
+                                    
+                                    Text(item.title)
+                                        .font(.system(size: 18, weight: .medium))
+                                        .foregroundColor(item.imageName == nil ? .blue : .black)
+                                    
+                                    Spacer()
+                                    
+                                    if let _ = item.imageName {
+                                        Image(systemName: "chevron.right")
+                                            .foregroundColor(.gray.opacity(0.6))
+                                    }
+                                    
+                                } // HStack
+                                .padding(.vertical, 12)
                                 
-                                Text(item.title)
-                                    .font(.system(size: 18, weight: .medium))
-                                    .foregroundColor(item.imageName == nil ? .blue : .black)
-                                
-                                Spacer()
-                                
-                                if let _ = item.imageName {
-                                    Image(systemName: "chevron.right")
-                                        .foregroundColor(.gray.opacity(0.6))
-                                }
-                                
-                            } // HStack
-                            .padding(.vertical, 12)
+                            } // ForEach
                             
-                        } // ForEach
-                        
-                    } // Section
-                    
-                    Section {
-                        
-                        let item = ListItem(
-                            imageName: nil,
-                            title: "Add Favorites..."
-                        )
-                        
-                        HStack(spacing: 16) {
+                        } header: {
                             
-                            Image(item.imageName ?? "fb_placeholder")
-                                .resizable()
-                                .frame(width: 30, height: 30)
-                            
-                            Text(item.title)
-                                .font(.system(size: 18, weight: .medium))
-                                .foregroundColor(item.imageName == nil ? .blue : .black)
-                            
-                            Spacer()
-                            
-                            if let _ = item.imageName {
-                                Image(systemName: "chevron.right")
-                                    .foregroundColor(.gray.opacity(0.6))
+                            if let header = list.header {
+                                Text(header)
                             }
                             
-                        } // HStack
-                        .padding(.vertical, 12)
+                        } // Section
                         
-                    } header: {
-                        
-                        Text("FAVORITES")
-                        
-                    }  // Section
+                    } // ForEach
                     
                     Section {
-                        
-                        ForEach(list2, id: \.self) { item in
-                            
-                            HStack(spacing: 16) {
-                                
-                                Image(item.imageName ?? "fb_placeholder")
-                                    .resizable()
-                                    .frame(width: 30, height: 30)
-                                
-                                Text(item.title)
-                                    .font(.system(size: 18, weight: .medium))
-                                    .foregroundColor(item.imageName == nil ? .blue : .black)
-                                
-                                Spacer()
-                                
-                                if let _ = item.imageName {
-                                    Image(systemName: "chevron.right")
-                                        .foregroundColor(.gray.opacity(0.6))
-                                }
-                                
-                            } // HStack
-                            .padding(.vertical, 12)
-                            
-                        } // ForEach
-                        
-                    } // Section
-                    
-                    Section {
-                        
+
                         HStack {
-                            
+
                             Spacer()
-                            
+
                             Text("Log Out")
                                 .font(.system(size: 18, weight: .medium))
                                 .foregroundColor(.red)
                                 .padding(.vertical, 12)
-                            
+
                             Spacer()
-                            
+
                         } // HStack
-                        
+
                     } // Section
                     
                 } // Group
