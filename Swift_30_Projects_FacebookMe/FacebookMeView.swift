@@ -13,7 +13,7 @@ struct FacebookMeView: View {
         navigationBarColors(background: .mainColor)
     }
     
-    var lists: [ListSection] = ListSection.mock
+    @State var listSections: [ListSection] = ListSection.mock
     
     var body: some View {
         
@@ -60,59 +60,27 @@ struct FacebookMeView: View {
                         
                     } // Section
                     
-                    ForEach(lists, id: \.self) { list in
+                    ForEach($listSections, id: \.self) { listSection in
                         
-                        Section {
-                            
-                            ForEach(list.listItems, id: \.self) { item in
-                                
-                                HStack(spacing: 16) {
-                                    
-                                    Image(item.imageName ?? "fb_placeholder")
-                                        .resizable()
-                                        .frame(width: 30, height: 30)
-                                    
-                                    Text(item.title)
-                                        .font(.system(size: 18, weight: .medium))
-                                        .foregroundColor(item.imageName == nil ? .blue : .black)
-                                    
-                                    Spacer()
-                                    
-                                    if let _ = item.imageName {
-                                        Image(systemName: "chevron.right")
-                                            .foregroundColor(.gray.opacity(0.6))
-                                    }
-                                    
-                                } // HStack
-                                .padding(.vertical, 12)
-                                
-                            } // ForEach
-                            
-                        } header: {
-                            
-                            if let header = list.header {
-                                Text(header)
-                            }
-                            
-                        } // Section
+                        ListSectionView(listSection: listSection)
                         
                     } // ForEach
                     
                     Section {
-
+                        
                         HStack {
-
+                            
                             Spacer()
-
+                            
                             Text("Log Out")
                                 .font(.system(size: 18, weight: .medium))
                                 .foregroundColor(.red)
                                 .padding(.vertical, 12)
-
+                            
                             Spacer()
-
+                            
                         } // HStack
-
+                        
                     } // Section
                     
                 } // Group
@@ -139,9 +107,7 @@ struct FacebookMeView: View {
 
 private extension FacebookMeView {
     func navigationBarColors(
-        background : UIColor?,
-        titleColor : UIColor? = nil,
-        tintColor : UIColor? = nil
+        background : UIColor?
     ) {
         let navigationAppearance = UINavigationBarAppearance()
         
