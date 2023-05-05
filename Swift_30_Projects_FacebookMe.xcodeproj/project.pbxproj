@@ -11,6 +11,8 @@
 		6B30337129FF5F7000CBA23C /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B30337029FF5F7000CBA23C /* ListItem.swift */; };
 		6B30337329FF6A0100CBA23C /* ListSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B30337229FF6A0100CBA23C /* ListSectionView.swift */; };
 		6B30337529FF6A1E00CBA23C /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B30337429FF6A1E00CBA23C /* ListCell.swift */; };
+		6B3033BE2A0518AE00CBA23C /* main_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B3033BC2A0518AE00CBA23C /* main_1.png */; };
+		6B3033BF2A0518AE00CBA23C /* main_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B3033BD2A0518AE00CBA23C /* main_2.png */; };
 		6BDB3BD229FED04700B8EAA6 /* Swift_30_Projects_FacebookMeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDB3BD129FED04700B8EAA6 /* Swift_30_Projects_FacebookMeApp.swift */; };
 		6BDB3BD429FED04700B8EAA6 /* FacebookMeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BDB3BD329FED04700B8EAA6 /* FacebookMeView.swift */; };
 		6BDB3BD629FED04900B8EAA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BDB3BD529FED04900B8EAA6 /* Assets.xcassets */; };
@@ -22,6 +24,9 @@
 		6B30337029FF5F7000CBA23C /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
 		6B30337229FF6A0100CBA23C /* ListSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListSectionView.swift; sourceTree = "<group>"; };
 		6B30337429FF6A1E00CBA23C /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
+		6B3033BA2A05169900CBA23C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		6B3033BC2A0518AE00CBA23C /* main_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_1.png; sourceTree = "<group>"; };
+		6B3033BD2A0518AE00CBA23C /* main_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main_2.png; sourceTree = "<group>"; };
 		6BDB3BCE29FED04700B8EAA6 /* Swift_30_Projects_FacebookMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swift_30_Projects_FacebookMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BDB3BD129FED04700B8EAA6 /* Swift_30_Projects_FacebookMeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift_30_Projects_FacebookMeApp.swift; sourceTree = "<group>"; };
 		6BDB3BD329FED04700B8EAA6 /* FacebookMeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookMeView.swift; sourceTree = "<group>"; };
@@ -40,9 +45,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6B3033BB2A05188D00CBA23C /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				6B3033BC2A0518AE00CBA23C /* main_1.png */,
+				6B3033BD2A0518AE00CBA23C /* main_2.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		6BDB3BC529FED04700B8EAA6 = {
 			isa = PBXGroup;
 			children = (
+				6B3033BA2A05169900CBA23C /* README.md */,
+				6B3033BB2A05188D00CBA23C /* Images */,
 				6BDB3BD029FED04700B8EAA6 /* Swift_30_Projects_FacebookMe */,
 				6BDB3BCF29FED04700B8EAA6 /* Products */,
 			);
@@ -138,7 +154,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BDB3BD929FED04900B8EAA6 /* Preview Assets.xcassets in Resources */,
+				6B3033BE2A0518AE00CBA23C /* main_1.png in Resources */,
 				6BDB3BD629FED04900B8EAA6 /* Assets.xcassets in Resources */,
+				6B3033BF2A0518AE00CBA23C /* main_2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
